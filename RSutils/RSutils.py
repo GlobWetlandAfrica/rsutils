@@ -556,6 +556,15 @@ class Extent(object):
 
 # FUNCTIONS =============================================================
 
+def rescale(index):
+    # Take 1st and 99th percentile for clipping the range
+    min_val = np.nanmin(index)
+    max_val = np.nanmax(index)
+    # Normalization
+    index_scaled = (index - min_val) / (max_val - min_val) / 4. + 0.75
+    return index_scaled
+
+
 def filter_scenes_by_date(scenes, start_date, end_date):
 
     filteredScenes = []
