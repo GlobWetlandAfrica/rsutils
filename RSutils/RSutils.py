@@ -801,7 +801,7 @@ def scene2raster(scene, dest, dataType, nodataVal):
         bandCols = array.shape[2]
         bandRows = array.shape[1]
     else:
-        print "Too many dimensions."
+        print("Too many dimensions.")
         return -1
 
     # Check if file exists, delete it if it does
@@ -1033,7 +1033,7 @@ def convertShapeExtentToRasterExtent(shapePath, rasterPath, attributeName=None, 
     # Meta data of raster file
     rasterF = gdal.Open(rasterPath)
     if rasterF is None:
-        print "File not found."
+        print("File not found.")
         logging.warning("File not found.")
         return 1
 
